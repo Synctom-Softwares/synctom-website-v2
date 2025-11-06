@@ -1,0 +1,546 @@
+"use client";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import { useState } from "react";
+
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
+import { Plus, Minus } from "lucide-react";
+import CTASection from "@/components/cta-section";
+
+export default function ContactClient() {
+  const [openFAQ, setOpenFAQ] = useState<string | null>(null);
+  const [formData, setFormData] = useState({
+    inquiryPurpose: "",
+    description: "",
+    fullName: "",
+    email: "",
+    organization: "",
+    phoneNumber: "",
+    message: "",
+  });
+
+  const toggleFAQ = (faqId: string) => {
+    setOpenFAQ(openFAQ === faqId ? null : faqId);
+  };
+
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Form submitted:", formData);
+    // Handle form submission here
+  };
+
+  return (
+    <div className="min-h-screen">
+      {/* Contact Hero Section */}
+      <div className="py-12 sm:py-14 md:py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          {/* Content */}
+          <div className="text-center space-y-6 sm:space-y-8">
+            {/* Badge */}
+            <div className="inline-block">
+              <span className="px-4 sm:px-6 py-2 sm:py-3 rounded-full border-2 bg-clip-text text-transparent bg-linear-to-r from-[#0383CA] to-[#EF3A61] border-gray-200 bg-white">
+                <span className="font-semibold text-sm sm:text-base">Contact Us</span>
+              </span>
+            </div>
+
+            {/* Main Heading */}
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight max-w-xs sm:max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto px-4 sm:px-0">
+              Let's Build Something Great Together
+            </h1>
+
+            {/* Description */}
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed max-w-xs sm:max-w-2xl md:max-w-3xl mx-auto px-4 sm:px-0">
+              We'd love to hear about your project or idea. Whether you're
+              looking for design, development, or a complete digital solution,
+              our team is ready to help you get started.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Contact Form Section */}
+
+      {/* Contact Information */}
+      <div className="py-12 sm:py-14 md:py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-10 md:mb-12">
+            {/* Phone */}
+            <div className="text-center space-y-3 sm:space-y-4">
+              <div className="w-6 h-6 sm:w-8 sm:h-8 mx-auto rounded-full flex items-center justify-center">
+                <Image
+                  src="/contact/phone.svg"
+                  alt="Phone icon"
+                  width={24}
+                  height={24}
+                  className="w-full h-full"
+                />
+              </div>
+              <div>
+                <p className="text-sm sm:text-base text-gray-600">0301 1234567</p>
+              </div>
+            </div>
+
+            {/* Email */}
+            <div className="text-center space-y-3 sm:space-y-4">
+              <div className="w-6 h-6 sm:w-8 sm:h-8 mx-auto rounded-full flex items-center justify-center">
+                <Image
+                  src="/contact/mail.svg"
+                  alt="Email icon"
+                  width={24}
+                  height={24}
+                  className="w-full h-full"
+                />
+              </div>
+              <div>
+                <p className="text-sm sm:text-base text-gray-600">help@synctom.com</p>
+              </div>
+            </div>
+
+            {/* Location */}
+            <div className="text-center space-y-3 sm:space-y-4">
+              <div className="w-6 h-6 sm:w-8 sm:h-8 mx-auto rounded-full flex items-center justify-center">
+                <Image
+                  src="/contact/map.svg"
+                  alt="Location icon"
+                  width={24}
+                  height={24}
+                  className="w-full h-full"
+                />
+              </div>
+              <div>
+                <p className="text-sm sm:text-base text-gray-600 mt-2">Sector I-9/4, Islamabad</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Map */}
+          <div className="rounded-xl sm:rounded-2xl overflow-hidden shadow-lg">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3420.4167347898215!2d73.05675407567769!3d33.65817563843544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38df95fdd65d590f%3A0xf294741e684bca4a!2sSynctom!5e1!3m2!1sen!2s!4v1762341633270!5m2!1sen!2s"
+              width="100%"
+              height="300"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full sm:h-80 md:h-96 lg:h-[400px]"
+            />
+          </div>
+        </div>
+      </div>
+      <div className="py-12 sm:py-14 md:py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center bg-clip-text text-transparent bg-linear-to-r from-[#0383CA] to-[#EF3A61] mb-8 sm:mb-10 md:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 px-4 sm:px-0">
+              Or fill out the form below
+            </h2>
+          </div>
+
+          <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+              {/* Inquiry Purpose */}
+              <div className="space-y-1 sm:space-y-2">
+                <label
+                  htmlFor="inquiryPurpose"
+                  className="block text-xs sm:text-sm font-medium text-gray-700"
+                >
+                  Inquiry Purpose<span className="text-red-500">*</span>
+                </label>
+                <div className="relative">
+                  <select
+                    id="inquiryPurpose"
+                    name="inquiryPurpose"
+                    value={formData.inquiryPurpose}
+                    onChange={handleInputChange}
+                    className="w-full px-3 py-2 sm:py-3 border border-gray-300 rounded-md shadow-sm bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#0383CA] focus:border-[#0383CA] appearance-none text-sm sm:text-base"
+                    required
+                  >
+                    <option value="" disabled>
+                      Choose one option
+                    </option>
+                    <option value="web-development">Web Development</option>
+                    <option value="mobile-app">Mobile App Development</option>
+                    <option value="ui-ux-design">UI/UX Design</option>
+                    <option value="consultation">Consultation</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                    <svg
+                      className="w-3 h-3 sm:w-4 sm:h-4 text-gray-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              {/* Description */}
+              <div className="space-y-1 sm:space-y-2">
+                <label
+                  htmlFor="description"
+                  className="block text-xs sm:text-sm font-medium text-gray-700"
+                >
+                  Description that fits you
+                  <span className="text-red-500">*</span>
+                </label>
+                <div className="relative">
+                  <select
+                    id="description"
+                    name="description"
+                    value={formData.description}
+                    onChange={handleInputChange}
+                    className="w-full px-3 py-2 sm:py-3 border border-gray-300 rounded-md shadow-sm bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#0383CA] focus:border-[#0383CA] appearance-none text-sm sm:text-base"
+                    required
+                  >
+                    <option value="" disabled>
+                      Choose one option
+                    </option>
+                    <option value="startup">Startup</option>
+                    <option value="small-business">Small Business</option>
+                    <option value="enterprise">Enterprise</option>
+                    <option value="individual">Individual</option>
+                    <option value="agency">Agency</option>
+                  </select>
+                  <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                    <svg
+                      className="w-3 h-3 sm:w-4 sm:h-4 text-gray-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+              {/* Full Name */}
+              <div className="space-y-1 sm:space-y-2">
+                <label
+                  htmlFor="fullName"
+                  className="block text-xs sm:text-sm font-medium text-gray-700"
+                >
+                  Full Name<span className="text-red-500">*</span>
+                </label>
+                <input
+                  id="fullName"
+                  name="fullName"
+                  type="text"
+                  placeholder="Enter Full Name"
+                  value={formData.fullName}
+                  onChange={handleInputChange}
+                  className="w-full px-3 py-2 sm:py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#0383CA] focus:border-[#0383CA] placeholder-gray-400 text-sm sm:text-base"
+                  required
+                />
+              </div>
+
+              {/* Email Address */}
+              <div className="space-y-1 sm:space-y-2">
+                <label
+                  htmlFor="email"
+                  className="block text-xs sm:text-sm font-medium text-gray-700"
+                >
+                  Email Address<span className="text-red-500">*</span>
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="Enter Email Address"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  className="w-full px-3 py-2 sm:py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#0383CA] focus:border-[#0383CA] placeholder-gray-400 text-sm sm:text-base"
+                  required
+                />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Organization */}
+              <div className="space-y-2">
+                <label
+                  htmlFor="organization"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Organization<span className="text-red-500">*</span>
+                </label>
+                <input
+                  id="organization"
+                  name="organization"
+                  type="text"
+                  placeholder="Enter your Organization"
+                  value={formData.organization}
+                  onChange={handleInputChange}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#0383CA] focus:border-[#0383CA] placeholder-gray-400"
+                  required
+                />
+              </div>
+
+              {/* Phone Number */}
+              <div className="space-y-2">
+                <label
+                  htmlFor="phoneNumber"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Phone Number<span className="text-red-500">*</span>
+                </label>
+                <div className="flex">
+                  <div className="flex items-center px-3 border border-r-0 border-gray-300 bg-gray-50 rounded-l-md">
+                    <Image
+                      src="/contact/pakistan-flag.svg"
+                      alt="Pakistan flag"
+                      width={20}
+                      height={15}
+                      className="mr-2"
+                    />
+                    <span className="text-sm text-gray-600">+92</span>
+                  </div>
+                  <input
+                    id="phoneNumber"
+                    name="phoneNumber"
+                    type="tel"
+                    placeholder="Enter Phone Number"
+                    value={formData.phoneNumber}
+                    onChange={handleInputChange}
+                    className="flex-1 px-3 py-2 border border-gray-300 rounded-r-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#0383CA] focus:border-[#0383CA] placeholder-gray-400"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Message */}
+            <div className="space-y-2">
+              <label
+                htmlFor="message"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Message<span className="text-red-500">*</span>
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Enter your Message here"
+                value={formData.message}
+                onChange={handleInputChange}
+                rows={5}
+                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#0383CA] focus:border-[#0383CA] placeholder-gray-400 resize-none"
+                required
+              />
+            </div>
+
+            {/* Submit Button */}
+            <div className="flex justify-center pt-6">
+              <Button type="submit" variant={"default"}>
+                Submit Form
+              </Button>
+            </div>
+          </form>
+        </div>
+      </div>
+      {/* FAQ Section */}
+      <div className="py-16 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Left Column - FAQ Info */}
+            <div className="space-y-8">
+              <div>
+                <h2 className="text-4xl font-bold text-gray-900 mb-4">FAQs</h2>
+                <p className="text-gray-600 text-lg leading-relaxed">
+                  Everything you need to know about working with Synctom, from
+                  pricing to project timelines and technical support.
+                </p>
+              </div>
+
+              {/* Category Buttons */}
+              <div className="space-y-4">
+                <div className="flex flex-wrap gap-3">
+                  <Button className="bg-gradient-to-r from-[#0383CA] to-pink-500 text-white">
+                    Getting Started
+                  </Button>
+                  <Button variant="outline">Pricing & Budget</Button>
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  <Button variant="outline">Project Process</Button>
+                  <Button variant="outline">Technical & Support</Button>
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  <Button variant="outline">Revisions & Delivery</Button>
+                  <Button variant="outline">Communication</Button>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column - FAQ Items */}
+            <div className="space-y-4">
+              {/* FAQ Item 1 */}
+              <Collapsible
+                open={openFAQ === "faq1"}
+                onOpenChange={() => toggleFAQ("faq1")}
+              >
+                <CollapsibleTrigger className="flex items-center justify-between w-full p-4 text-left border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <span className="font-medium text-gray-900">
+                    How long does it take to start a new project?
+                  </span>
+                  {openFAQ === "faq1" ? (
+                    <Minus className="h-5 w-5 text-gray-500" />
+                  ) : (
+                    <Plus className="h-5 w-5 text-gray-500" />
+                  )}
+                </CollapsibleTrigger>
+                <CollapsibleContent className="px-4 pb-4">
+                  <p className="text-gray-600">
+                    Once we finalize the project scope, we typically start
+                    within 3-7 business days depending on availability.
+                  </p>
+                </CollapsibleContent>
+              </Collapsible>
+
+              {/* FAQ Item 2 */}
+              <Collapsible
+                open={openFAQ === "faq2"}
+                onOpenChange={() => toggleFAQ("faq2")}
+              >
+                <CollapsibleTrigger className="flex items-center justify-between w-full p-4 text-left border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <span className="font-medium text-gray-900">
+                    What is the cost to design or develop a project?
+                  </span>
+                  {openFAQ === "faq2" ? (
+                    <Minus className="h-5 w-5 text-gray-500" />
+                  ) : (
+                    <Plus className="h-5 w-5 text-gray-500" />
+                  )}
+                </CollapsibleTrigger>
+                <CollapsibleContent className="px-4 pb-4">
+                  <p className="text-gray-600">
+                    Project costs vary based on scope, complexity, and timeline.
+                    We provide detailed quotes after understanding your specific
+                    requirements during our initial consultation.
+                  </p>
+                </CollapsibleContent>
+              </Collapsible>
+
+              {/* FAQ Item 3 */}
+              <Collapsible
+                open={openFAQ === "faq3"}
+                onOpenChange={() => toggleFAQ("faq3")}
+              >
+                <CollapsibleTrigger className="flex items-center justify-between w-full p-4 text-left border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <span className="font-medium text-gray-900">
+                    Do you work with international clients?
+                  </span>
+                  {openFAQ === "faq3" ? (
+                    <Minus className="h-5 w-5 text-gray-500" />
+                  ) : (
+                    <Plus className="h-5 w-5 text-gray-500" />
+                  )}
+                </CollapsibleTrigger>
+                <CollapsibleContent className="px-4 pb-4">
+                  <p className="text-gray-600">
+                    Yes, we work with clients globally. We have experience
+                    managing projects across different time zones and provide
+                    flexible communication schedules.
+                  </p>
+                </CollapsibleContent>
+              </Collapsible>
+
+              {/* FAQ Item 4 */}
+              <Collapsible
+                open={openFAQ === "faq4"}
+                onOpenChange={() => toggleFAQ("faq4")}
+              >
+                <CollapsibleTrigger className="flex items-center justify-between w-full p-4 text-left border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <span className="font-medium text-gray-900">
+                    Do you provide ongoing maintenance and support?
+                  </span>
+                  {openFAQ === "faq4" ? (
+                    <Minus className="h-5 w-5 text-gray-500" />
+                  ) : (
+                    <Plus className="h-5 w-5 text-gray-500" />
+                  )}
+                </CollapsibleTrigger>
+                <CollapsibleContent className="px-4 pb-4">
+                  <p className="text-gray-600">
+                    Yes, we offer comprehensive maintenance packages and ongoing
+                    support to ensure your project continues to perform
+                    optimally after launch.
+                  </p>
+                </CollapsibleContent>
+              </Collapsible>
+
+              {/* FAQ Item 5 */}
+              <Collapsible
+                open={openFAQ === "faq5"}
+                onOpenChange={() => toggleFAQ("faq5")}
+              >
+                <CollapsibleTrigger className="flex items-center justify-between w-full p-4 text-left border-b border-gray-200 hover:bg-gray-50 transition-colors">
+                  <span className="font-medium text-gray-900">
+                    Can you build both design and development?
+                  </span>
+                  {openFAQ === "faq5" ? (
+                    <Minus className="h-5 w-5 text-gray-500" />
+                  ) : (
+                    <Plus className="h-5 w-5 text-gray-500" />
+                  )}
+                </CollapsibleTrigger>
+                <CollapsibleContent className="px-4 pb-4">
+                  <p className="text-gray-600">
+                    Absolutely! We offer end-to-end services including UI/UX
+                    design, web development, mobile app development, and
+                    complete digital solutions.
+                  </p>
+                </CollapsibleContent>
+              </Collapsible>
+
+              {/* Still have questions section */}
+              <div className="mt-8 p-6 rounded-lg">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  Still have questions?
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  Contact our support team and we'll make sure everything is
+                  clear and helpful.
+                </p>
+                <Button variant={'default'}>
+                  Contact Support
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <CTASection/>
+    </div>
+  );
+}
