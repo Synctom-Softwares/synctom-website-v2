@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 import CTASection from "@/components/cta-section";
 
 // Reusable Expertise Card Component
@@ -194,11 +195,11 @@ export default function Industries() {
 
               {/* Buttons */}
               <div className="flex flex-wrap gap-4">
-                <Button variant="default" size="lg">
-                  Explore Our Work
+                <Button asChild variant="default" size="lg">
+                  <Link href="/portfolio">Explore Our Work</Link>
                 </Button>
-                <Button variant="outline" size="lg">
-                  Get in Touch
+                <Button asChild variant="outline" size="lg">
+                  <Link href="/contact">Get in Touch</Link>
                 </Button>
               </div>
             </div>

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 // Gallery images for services
 const galleryImages = [
@@ -139,8 +140,8 @@ export default function ServicesSection() {
               scale.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="px-6 sm:px-8 py-3">
-                Explore our Services
+              <Button asChild className="px-6 sm:px-8 py-3">
+                <Link href="/services">Explore our Services</Link>
               </Button>
             </div>
           </div>

@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Linkedin } from "lucide-react";
 import CTASection from "@/components/cta-section";
@@ -21,35 +22,69 @@ interface TeamMember {
   position: string;
   email: string;
   image: string;
+  linkedin: string;
 }
 
 const teamMembers: TeamMember[] = [
   {
     id: 1,
-    name: "Solid Snake",
-    position: "Co-Founder & CEO",
-    email: "solid@syncton.com",
+    name: "Syed Ali Taqi",
+    position: "Board Member",
+    email: "alitaqi@syncton.com",
     image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop&crop=face",
+      "/teams/alitaqi.jpg",
+    linkedin: "https://www.linkedin.com/in/syed-ali-taqi-hussnain/",
   },
   {
     id: 2,
     name: "Mehtab Khan Afridi",
-    position: "Co-Founder & CEO",
-    email: "ezio@syncton.com",
+    position: "Board Member",
+    email: "mkafridi@syncton.com",
     image:
       "/teams/mehtab.png",
+      linkedin:'https://www.linkedin.com/in/mehtab-khan-852a3928b/'
   },
   {
     id: 3,
-    name: "Edward Nigma",
-    position: "Co-Founder & CEO",
-    email: "edward@syncton.com",
-    image:
-      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=600&fit=crop&crop=face",
+    name: "Syed Ain Ali",
+    position: "Board Member",
+    email: "ainali@syncton.com",
+    image:"/teams/ain.jpg",
+      linkedin:'https://www.linkedin.com/in/ain-ali-a0a86b31b/'
   },
+  {
+    id:4,
+    name:'Haider Ahmad',
+    position:'Web Developer',
+    email:'haiderahmad352@gmail.com',
+    image:'/teams/haider.jpg',
+    linkedin:'https://www.linkedin.com/in/haider-ahmad-439317164/'
+  },
+  {
+    id:5,
+    name:'Sharoon Shaleem',
+    position:'Web Developer',
+    email:'ssharoon166@gmail.com',
+    image:'/teams/sharoon.jpg',
+    linkedin:'https://www.linkedin.com/in/sharoon-shaleem-0a7a85226/'
+  },
+  {
+    id:6,
+    name:'Raja Muhammad Zubair',
+    position:"UI/UX Designer",
+    email:'rajazubair5626573@gmail.com',
+    image:'/teams/raja.png',
+    linkedin:'https://www.linkedin.com/in/raja-zubair-664066294/'
+  },
+  {
+    id:7,
+    name:'Ehtasham Ul Haq',
+    position:"Web Developer",
+    email:"ehteshamali@gmail.com",
+    image:'/teams/ehtasham.jpg',
+    linkedin:'https://www.linkedin.com/in/ehtasham-ul-haq-86069b274/'
+    }
 ];
-
 function TeamCard({ member }: { member: TeamMember }) {
   return (
     <div className="relative bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 group">
@@ -64,9 +99,14 @@ function TeamCard({ member }: { member: TeamMember }) {
 
         {/* LinkedIn Icon */}
         <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
-          <div className="w-7 h-7 sm:w-8 sm:h-8 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center">
+          <Link 
+            href="https://www.linkedin.com/company/synctom/" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-7 h-7 sm:w-8 sm:h-8 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-white/30 transition-colors"
+          >
             <Linkedin className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
-          </div>
+          </Link>
         </div>
 
         {/* Member Info */}
@@ -144,11 +184,12 @@ export default function About() {
 
               {/* Button */}
               <Button
+                asChild
                 variant="default"
                 size="lg"
                 className="w-full sm:w-auto px-6 sm:px-8 py-3 text-sm sm:text-base"
               >
-                Explore our Services
+                <Link href="/services">Explore our Services</Link>
               </Button>
             </div>
 
@@ -300,7 +341,7 @@ export default function About() {
           </div>
 
           {/* Team Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-6 sm:mb-8">
             {teamMembers.map((member) => (
               <TeamCard key={member.id} member={member} />
             ))}
