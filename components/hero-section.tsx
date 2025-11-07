@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function SynctomLanding() {
@@ -11,10 +12,11 @@ export default function SynctomLanding() {
   }, []);
 
   return (
-    <div className="overflow-hidden relative">
-      {/* Animated Floating Icons with Flower Bloom Effect - Hidden on mobile */}
+    <div className="overflow-hidden relative bg-white">
+     
+      {/* Animated Floating Icons with Flower Bloom Effect - Responsive */}
       <motion.div
-        className="absolute shadow-lg rotate-15 top-15 left-40 z-0 hidden lg:block"
+        className="absolute shadow-lg rotate-15 top-8 left-4 sm:top-15 sm:left-40 z-0"
         initial={{
           x: "calc(50vw - 160px)",
           y: "calc(16rem + 8rem + 3rem)",
@@ -40,13 +42,13 @@ export default function SynctomLanding() {
         <Image
           src="/herosection/figma.png"
           alt="Figma"
-          width={50}
-          height={60}
+          width={30}
+          height={36}
+          className="sm:w-[50px] sm:h-[60px]"
         />
       </motion.div>
-
       <motion.div
-        className="absolute top-60 left-20 z-0 hidden lg:block"
+        className="absolute top-32 left-2 sm:top-60 sm:left-20 z-0"
         initial={{
           x: "calc(50vw - 80px)",
           y: "calc(16rem + 8rem + 3rem - 240px)",
@@ -70,13 +72,13 @@ export default function SynctomLanding() {
         <Image
           src="/herosection/javascripy.png"
           alt="JavaScript"
-          width={50}
-          height={50}
+          width={30}
+          height={30}
+          className="sm:w-[50px] sm:h-[50px]"
         />
       </motion.div>
-
       <motion.div
-        className="absolute top-100 left-40 z-0 hidden lg:block"
+        className="absolute top-56 left-8 sm:top-100 sm:left-40 z-0"
         initial={{
           x: "calc(50vw - 160px)",
           y: "calc(16rem + 8rem + 3rem - 400px)",
@@ -97,12 +99,17 @@ export default function SynctomLanding() {
           damping: 15,
         }}
       >
-        <Image src="/herosection/code.png" alt="Code" width={55} height={55} />
+        <Image
+          src="/herosection/code.png"
+          alt="Code"
+          width={33}
+          height={33}
+          className="sm:w-[55px] sm:h-[55px]"
+        />
       </motion.div>
-
-      {/* Right side icons - Hidden on mobile */}
+      {/* Right side icons - Responsive */}
       <motion.div
-        className="absolute top-15 right-40 z-0 hidden lg:block"
+        className="absolute top-8 right-4 sm:top-15 sm:right-40 z-0"
         initial={{
           x: "calc(-50vw + 160px)",
           y: "calc(16rem + 8rem + 3rem)",
@@ -126,13 +133,13 @@ export default function SynctomLanding() {
         <Image
           src="/herosection/code-2.png"
           alt="Code 2"
-          width={65}
-          height={65}
+          width={39}
+          height={39}
+          className="sm:w-[65px] sm:h-[65px]"
         />
       </motion.div>
-
       <motion.div
-        className="absolute top-100 right-30 z-0 hidden lg:block"
+        className="absolute top-56 right-2 sm:top-100 sm:right-30 z-0"
         initial={{
           x: "calc(-50vw + 80px)",
           y: "calc(16rem + 8rem + 3rem - 400px)",
@@ -153,9 +160,14 @@ export default function SynctomLanding() {
           damping: 15,
         }}
       >
-        <Image src="/herosection/ai.png" alt="AI" width={90} height={70} />
+        <Image
+          src="/herosection/ai.png"
+          alt="AI"
+          width={54}
+          height={42}
+          className="sm:w-[90px] sm:h-[70px]"
+        />
       </motion.div>
-
       {/* Main Content */}
       <div className="relative z-10 h-full container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12">
         {/* Header Badge */}
@@ -210,22 +222,23 @@ export default function SynctomLanding() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
-          <Button 
-            variant={"default"} 
+          <Button
+            asChild
+            variant={"default"}
             className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base"
           >
-            Start a Project
+            <Link href="/contact">Start a Project</Link>
           </Button>
-          <Button 
-            variant={"outline"} 
+          <Button
+            asChild
+            variant={"outline"}
             className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base"
           >
-            View our Work
+            <Link href="/portfolio">View our Work</Link>
           </Button>
         </div>
 
         {/* Bottom Section */}
-        
       </div>
     </div>
   );

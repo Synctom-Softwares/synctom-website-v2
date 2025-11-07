@@ -1,6 +1,7 @@
 "use client";
 import { Button } from "./ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 const industries = [
   {
@@ -176,7 +177,9 @@ export default function Industries() {
           {/* Center Globe - Hidden on mobile, visible on lg */}
           <div className="hidden lg:flex items-center justify-center">
             <div className="relative w-32 h-32 xl:w-40 xl:h-40">
-              
+              <Image src='/globe.png'
+              alt='globe'
+              fill/>
             </div>
           </div>
 
@@ -256,8 +259,8 @@ export default function Industries() {
 
         {/* View All Industries Button */}
         <div className="text-center">
-          <Button variant={"default"} className="px-6 sm:px-8 py-3 text-sm sm:text-base">
-            View all Industries
+          <Button asChild variant={"default"} className="px-6 sm:px-8 py-3 text-sm sm:text-base">
+            <Link href="/industries">View all Industries</Link>
           </Button>
         </div>
       </div>

@@ -42,13 +42,28 @@ export default function Footer() {
               Empowering businesses through technology, creativity, and innovation.
             </p>
             <div className="flex space-x-3 sm:space-x-4">
-              <Link href="#" className="text-gray-400 hover:text-blue-600 transition-colors p-1">
+              <Link 
+                href="https://www.facebook.com/share/1CvMspAMCR/" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-blue-600 transition-colors p-1"
+              >
                 <Facebook className="w-5 h-5 sm:w-6 sm:h-6" />
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-blue-600 transition-colors p-1">
+              <Link 
+                href="https://www.linkedin.com/company/synctom/" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-blue-600 transition-colors p-1"
+              >
                 <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-blue-600 transition-colors p-1">
+              <Link 
+                href="https://www.instagram.com/synctom.official?igsh=MTJ4ZWR6aWs5cW41MA==" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-blue-600 transition-colors p-1"
+              >
                 <Instagram className="w-5 h-5 sm:w-6 sm:h-6" />
               </Link>
             </div>
@@ -94,15 +109,15 @@ export default function Footer() {
             <div className="space-y-3 sm:space-y-4">
               <div className="flex items-center text-sm sm:text-base text-gray-600">
                 <Mail className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 text-gray-400 shrink-0" />
-                <span className="break-all">info@syncton.com</span>
+                <span className="break-all">help@synctom.com</span>
               </div>
               <div className="flex items-center text-sm sm:text-base text-gray-600">
                 <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 text-gray-400 shrink-0" />
-                <span>+92 300 1234567</span>
+                <span>+92 301 1234567</span>
               </div>
               <div className="flex items-start text-sm sm:text-base text-gray-600">
                 <MapPin className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 mt-0.5 text-gray-400 shrink-0" />
-                <span>123 street, main Iqbal town<br />Islamabad, Pakistan</span>
+                <span>Sector I-9/4<br />Islamabad, Pakistan</span>
               </div>
             </div>
           </div>
@@ -116,7 +131,7 @@ export default function Footer() {
                 placeholder="Enter Your Email"
                 className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg text-sm sm:text-base shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent focus:shadow-md transition-shadow"
               />
-              <Button variant="default" className="w-full py-2 sm:py-3 text-sm sm:text-base">
+              <Button type="submit" variant="default" className="w-full py-2 sm:py-3 text-sm sm:text-base">
                 Subscribe
               </Button>
             </div>
@@ -126,7 +141,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-200 mt-8 sm:mt-10 md:mt-12 pt-4 sm:pt-6">
           <p className="text-gray-500 text-xs sm:text-sm text-center">
-            © 2025 Syncton. All rights reserved.
+            © 2025 Synctom. All rights reserved.
           </p>
         </div>
       </div>

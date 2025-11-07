@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone } from "lucide-react";
+import Link from "next/link";
 
 export default function ContactSection() {
   return (
@@ -77,7 +78,7 @@ export default function ContactSection() {
           <Textarea placeholder="Write your message..." className="text-sm" />
         </div>
 
-        <Button className="w-full text-sm sm:text-base py-2 sm:py-3">Submit</Button>
+        <Button type="submit" className="w-full text-sm sm:text-base py-2 sm:py-3">Submit</Button>
       </div>
       
       {/* RIGHT: Content */}
@@ -92,8 +93,8 @@ export default function ContactSection() {
           Let's discuss your project and turn your ambitious ideas into
           scalable, beautiful software.
         </p>
-        <Button variant="default" className="w-fit mb-6 sm:mb-8 text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3">
-          Start a Project
+        <Button asChild variant="default" className="w-fit mb-6 sm:mb-8 text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3">
+          <Link href="/contact">Start a Project</Link>
         </Button>
 
         <div className="space-y-2 sm:space-y-3 text-xs sm:text-sm">

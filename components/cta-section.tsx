@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 export default function CTASection() {
@@ -29,18 +30,20 @@ export default function CTASection() {
 
         <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 px-2 sm:px-0">
           <Button
+            asChild
             variant="default"
             size="lg"
             className="bg-[#0383CA] hover:bg-[#0267A3] w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base"
           >
-            Start a Project
+            <Link href="/contact">Start a Project</Link>
           </Button>
           <Button
+            asChild
             variant="ghost"
             size="lg"
             className="border text-white hover:bg-white hover:text-gray-900 w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base"
           >
-            View our Work
+            <Link href="/portfolio">View our Work</Link>
           </Button>
         </div>
       </div>

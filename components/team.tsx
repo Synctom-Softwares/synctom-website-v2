@@ -1,6 +1,7 @@
 "use client";
 import { Button } from "./ui/button";
 import Image from "next/image";
+import Link from "next/link";
 import { Linkedin } from "lucide-react";
 
 interface TeamMember {
@@ -9,40 +10,43 @@ interface TeamMember {
   position: string;
   email: string;
   image: string;
+  linkedin: string;
 }
 
 const teamMembers: TeamMember[] = [
   {
     id: 1,
-    name: "Solid Snake",
-    position: "Co-Founder & CEO",
-    email: "solid@syncton.com",
+    name: "Syed Ali Taqi",
+    position: "Board Member",
+    email: "alitaqi@syncton.com",
     image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop&crop=face",
+      "/teams/alitaqi.jpg",
+    linkedin: "https://www.linkedin.com/in/syed-ali-taqi-hussnain/",
   },
   {
     id: 2,
-    name: "Ezio Auditore",
-    position: "Co-Founder & COO",
-    email: "ezio@syncton.com",
+    name: "Mehtab Khan Afridi",
+    position: "Board Member",
+    email: "mkafridi@syncton.com",
     image:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=600&fit=crop&crop=face",
+      "/teams/mehtab.png",
+      linkedin:'https://www.linkedin.com/in/mehtab-khan-852a3928b/'
   },
   {
     id: 3,
-    name: "Edward Nigma",
-    position: "Head of People",
-    email: "edward@syncton.com",
+    name: "Syed Ain Ali",
+    position: "Board Member",
+    email: "ainali@syncton.com",
     image:
-      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=600&fit=crop&crop=face",
+      "/teams/ain.jpg",
+      linkedin:'https://www.linkedin.com/in/ain-ali-a0a86b31b/'
   },
-
 ];
 
 function TeamCard({ member }: { member: TeamMember }) {
   return (
     <div className="relative bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 group">
-      <div className="relative h-64 sm:h-72 md:h-80">
+      <div className="relative h-110">
         <Image
           src={member.image}
           alt={member.name}
@@ -53,15 +57,22 @@ function TeamCard({ member }: { member: TeamMember }) {
 
         {/* LinkedIn Icon */}
         <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
-          <div className="w-7 h-7 sm:w-8 sm:h-8 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center">
+          <Link
+            href={member.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-7 h-7 sm:w-8 sm:h-8 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-white/30 transition-colors"
+          >
             <Linkedin className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
-          </div>
+          </Link>
         </div>
 
         {/* Member Info */}
         <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 text-white">
           <h3 className="text-lg sm:text-xl font-bold mb-1">{member.name}</h3>
-          <p className="text-white/90 text-xs sm:text-sm mb-1 sm:mb-2">{member.position}</p>
+          <p className="text-white/90 text-xs sm:text-sm mb-1 sm:mb-2">
+            {member.position}
+          </p>
           <p className="text-white/70 text-xs">{member.email}</p>
         </div>
       </div>

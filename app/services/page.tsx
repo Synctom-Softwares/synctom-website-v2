@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import CTASection from "@/components/cta-section";
 
@@ -92,11 +93,11 @@ export default function Service() {
 
               {/* Buttons */}
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <Button variant="default" size="lg" className="w-full sm:w-auto px-6 sm:px-8 py-3 text-sm sm:text-base">
-                  Start a Project
+                <Button asChild variant="default" size="lg" className="w-full sm:w-auto px-6 sm:px-8 py-3 text-sm sm:text-base">
+                  <Link href="/contact">Start a Project</Link>
                 </Button>
-                <Button variant="outline" size="lg" className="w-full sm:w-auto px-6 sm:px-8 py-3 text-sm sm:text-base">
-                  View our Work
+                <Button asChild variant="outline" size="lg" className="w-full sm:w-auto px-6 sm:px-8 py-3 text-sm sm:text-base">
+                  <Link href="/portfolio">View our Work</Link>
                 </Button>
               </div>
             </div>

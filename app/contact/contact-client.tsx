@@ -1,6 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 import {
@@ -532,8 +533,8 @@ export default function ContactClient() {
                   Contact our support team and we'll make sure everything is
                   clear and helpful.
                 </p>
-                <Button variant={'default'}>
-                  Contact Support
+                <Button asChild variant={'default'}>
+                  <Link href="/contact">Contact Support</Link>
                 </Button>
               </div>
             </div>

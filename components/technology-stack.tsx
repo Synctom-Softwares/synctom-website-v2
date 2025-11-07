@@ -1,6 +1,7 @@
 "use client";
 import { IconCloudDemo } from "./iconscloud";
 import { Button } from "./ui/button";
+import Link from "next/link";
 
 export default function TechnologyStack() {
   return (
@@ -18,8 +19,8 @@ export default function TechnologyStack() {
             <p className="text-sm sm:text-base text-gray-600 mb-6 sm:mb-8 leading-relaxed">
               We combine the latest technologies with proven practices to build scalable, secure, and future-ready digital solutions.
             </p>
-            <Button variant="default" className="px-6 sm:px-8 py-3 text-sm sm:text-base">
-              Get In Touch
+            <Button asChild variant="default" className="px-6 sm:px-8 py-3 text-sm sm:text-base">
+              <Link href="/contact">Get In Touch</Link>
             </Button>
           </div>
 
