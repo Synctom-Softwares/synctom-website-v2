@@ -161,7 +161,7 @@ export default function About() {
                 alt="Synctom office workspace"
                 width={800}
                 height={400}
-                className="w-full h-48 sm:h-64 md:h-80 lg:h-96 object-cover rounded-xl sm:rounded-2xl shadow-lg"
+                className="w-full pointer-events-none h-48 sm:h-64 md:h-80 lg:h-96 object-cover rounded-xl sm:rounded-2xl shadow-lg"
                 priority
               />
             </div>
