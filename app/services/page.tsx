@@ -5,7 +5,7 @@ import CTASection from "@/components/cta-section";
 
 // Reusable Service Card Component
 interface ServiceCardProps {
-  number: string;
+  number: number;
   title: string;
   description: string;
 }
@@ -14,9 +14,15 @@ function ServiceCard({ number, title, description }: ServiceCardProps) {
   return (
     <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300">
       <div className="space-y-3 sm:space-y-4">
-        <div className="text-2xl sm:text-3xl font-bold text-[#0383CA]">{number}</div>
-        <h3 className="text-lg sm:text-xl font-semibold text-gray-900">{title}</h3>
-        <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{description}</p>
+        <div className="text-2xl sm:text-3xl font-bold text-[#0383CA]">
+          {number}
+        </div>
+        <h3 className="text-lg sm:text-xl font-semibold text-gray-900">
+          {title}
+        </h3>
+        <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+          {description}
+        </p>
       </div>
     </div>
   );
@@ -25,40 +31,46 @@ function ServiceCard({ number, title, description }: ServiceCardProps) {
 export default function Service() {
   const services = [
     {
-      number: "01",
-      title: "UI/UX Designing",
-      description:
-        "We design seamless digital experiences that connect brands with users. From wireframes to pixel-perfect interfaces, every detail is carefully crafted to enhance usability, engagement, and overall satisfaction.",
-    },
-    {
-      number: "02",
+      id: 1,
+      number: 1,
       title: "Web Development",
       description:
-        "Our team develops high-performing, secure, and scalable websites tailored to your business goals. We ensure every line of code translates into a fast, responsive, and visually stunning online experience.",
+        "Build responsive, scalable websites and web applications using modern technologies and best practices.",
     },
     {
-      number: "03",
+      id: 2,
+      number: 2,
       title: "App Development",
       description:
-        "We transform your ideas into powerful mobile applications with modern UI, robust performance, and smooth functionality — delivering apps that users love on both Android and iOS platforms.",
+        "Develop native and cross-platform mobile applications that deliver seamless performance across devices.",
     },
     {
-      number: "04",
-      title: "Branding & Identity",
+      id: 3,
+      number: 3,
+      title: "UI/UX Design",
       description:
-        "Your brand is your story. We create compelling brand identities — logos, visuals, and style systems — that communicate your values and set you apart in the digital landscape.",
+        "Create intuitive interfaces and engaging user experiences that drive conversions and user satisfaction.",
     },
     {
-      number: "05",
-      title: "Software Solutions",
+      id: 4,
+      number: 4,
+      title: "Software Development (.NET)",
       description:
-        "We build custom software tailored to your unique business processes. From enterprise systems to automation tools, our solutions streamline workflows and drive measurable results.",
+        "Design compelling visual content that communicates your brand message and captivates your audience.",
     },
     {
-      number: "06",
-      title: "Maintenance & Support",
+      id: 5,
+      number: 5,
+      title: "Social Media Management & Branding",
       description:
-        "Our job doesn't end at launch. We offer continuous monitoring, performance optimization, and timely updates to ensure your websites and apps stay fast, secure, and up-to-date.",
+        "Build strong brand identities that resonate with your target audience and differentiate you from competitors.",
+    },
+    {
+      id: 6,
+      number: 6,
+      title: "AI Solutions",
+      description:
+        "Implement intelligent automation solutions that streamline processes and enhance business efficiency.",
     },
   ];
 
@@ -93,10 +105,20 @@ export default function Service() {
 
               {/* Buttons */}
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <Button asChild variant="default" size="lg" className="w-full sm:w-auto px-6 sm:px-8 py-3 text-sm sm:text-base">
+                <Button
+                  asChild
+                  variant="default"
+                  size="lg"
+                  className="w-full sm:w-auto px-6 sm:px-8 py-3 text-sm sm:text-base"
+                >
                   <Link href="/contact">Start a Project</Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="w-full sm:w-auto px-6 sm:px-8 py-3 text-sm sm:text-base">
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="w-full sm:w-auto px-6 sm:px-8 py-3 text-sm sm:text-base"
+                >
                   <Link href="/portfolio">View our Work</Link>
                 </Button>
               </div>
@@ -162,8 +184,8 @@ export default function Service() {
             </h2>
             <p className="text-sm sm:text-base text-gray-600 max-w-xs sm:max-w-2xl md:max-w-3xl mx-auto px-4 sm:px-0">
               Our process is driven by collaboration, transparency, and
-              innovation. We don't just deliver projects — we build long-term
-              digital partnerships.
+              innovation. We don&apos;t just deliver projects — we build
+              long-term digital partnerships.
             </p>
           </div>
 
