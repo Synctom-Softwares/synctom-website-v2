@@ -13,17 +13,12 @@ import {
   SiJavascript,
   SiExpress,
   SiMongodb,
-  SiMysql,
   SiFlutter,
   SiDart,
   SiFirebase,
   SiPython,
   SiTensorflow,
   SiOpenai,
-  SiFacebook,
-  SiInstagram,
-  SiLinkedin,
-  SiGoogleads,
 } from "react-icons/si";
 import { ArrowUpRight } from "lucide-react";
 
@@ -68,7 +63,6 @@ const projects: Project[] = [
       { icon: SiJavascript, color: "text-yellow-500" },
       { icon: SiExpress, color: "text-gray-800" },
       { icon: SiMongodb, color: "text-green-600" },
-      { icon: SiMysql, color: "text-blue-600" },
     ],
   },
   {
@@ -98,23 +92,7 @@ const projects: Project[] = [
       { icon: SiJavascript, color: "text-yellow-500" },
     ],
   },
-  {
-    id: "ecommerce-ui",
-    title: "ShopFlow",
-    subtitle: "E-Commerce UI/UX Design",
-    description:
-      "A modern e-commerce platform design featuring intuitive navigation, seamless checkout experience, and engaging product displays. Designed to maximize conversions and provide delightful shopping experiences across all devices.",
-    logo: "/logo.png",
-    image: "/projects/diniiz.png",
-    category: "uiux",
-    designTools: [
-      { icon: SiFigma, color: "text-purple-600" },
-      { icon: SiAdobephotoshop, color: "text-blue-600" },
-      { icon: SiAdobeillustrator, color: "text-orange-600" },
-    ],
-    frontendTools: [],
-    backendTools: [],
-  },
+ 
   {
     id: "fitness-app",
     title: "FitTrack Pro",
@@ -160,63 +138,8 @@ const projects: Project[] = [
       { icon: SiOpenai, color: "text-gray-800" },
     ],
   },
-  {
-    id: "brand-campaign",
-    title: "TechVision 2024",
-    subtitle: "Social Media Brand Campaign",
-    description:
-      "A comprehensive social media campaign that increased brand awareness by 300% and engagement by 250%. Strategic content creation, influencer partnerships, and data-driven targeting across multiple platforms.",
-    logo: "/logo.png",
-    image: "/projects/axion.png",
-    category: "social",
-    designTools: [
-      { icon: SiFigma, color: "text-purple-600" },
-      { icon: SiAdobephotoshop, color: "text-blue-600" },
-      { icon: SiAdobeillustrator, color: "text-orange-600" },
-    ],
-    frontendTools: [
-      { icon: SiFacebook, color: "text-blue-600" },
-      { icon: SiInstagram, color: "text-pink-600" },
-      { icon: SiLinkedin, color: "text-blue-700" },
-    ],
-    backendTools: [],
-  },
-  {
-    id: "digital-marketing",
-    title: "GrowthMax Campaign",
-    subtitle: "Full-Stack Digital Marketing",
-    description:
-      "End-to-end digital marketing campaign featuring SEO optimization, PPC advertising, email marketing, and content strategy. Achieved 400% ROI and 5x increase in qualified leads within 6 months.",
-    logo: "/logo.png",
-    image: "/projects/diniiz.png",
-    category: "marketing",
-    designTools: [
-      { icon: SiFigma, color: "text-purple-600" },
-      { icon: SiAdobephotoshop, color: "text-blue-600" },
-    ],
-    frontendTools: [
-      { icon: SiGoogleads, color: "text-yellow-500" },
-      { icon: SiFacebook, color: "text-blue-600" },
-      { icon: SiLinkedin, color: "text-blue-700" },
-    ],
-    backendTools: [],
-  },
-  {
-    id: "dashboard-design",
-    title: "DataViz Pro",
-    subtitle: "Analytics Dashboard UI/UX",
-    description:
-      "A sophisticated analytics dashboard design that transforms complex data into actionable insights. Features interactive charts, real-time updates, and customizable widgets for enhanced data visualization.",
-    logo: "/logo.png",
-    image: "/projects/axion.png",
-    category: "uiux",
-    designTools: [
-      { icon: SiFigma, color: "text-purple-600" },
-      { icon: SiAdobeillustrator, color: "text-orange-600" },
-    ],
-    frontendTools: [],
-    backendTools: [],
-  },
+
+ 
   {
     id: "delivery-app",
     title: "QuickDeliver",
@@ -386,7 +309,7 @@ export default function PortfolioClient() {
               All Projects
             </TabsTrigger>
             <TabsTrigger value="uiux" className="px-4 py-2">
-              UI/UX Designing
+              UI/UX Design
             </TabsTrigger>
             <TabsTrigger value="web" className="px-4 py-2">
               Web Development
@@ -398,7 +321,7 @@ export default function PortfolioClient() {
               AI Solutions
             </TabsTrigger>
             <TabsTrigger value="social" className="px-4 py-2">
-              Social Media
+              Social Media Management & Branding
             </TabsTrigger>
             <TabsTrigger value="marketing" className="px-4 py-2">
               Digital Marketing

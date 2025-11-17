@@ -15,18 +15,18 @@ const galleryImages = [
       "Build responsive, scalable websites and web applications using modern technologies and best practices.",
   },
   {
-    id: 2,
-    url: "/services/services(1).jpg",
-    title: "UI/UX Design",
-    description:
-      "Create intuitive interfaces and engaging user experiences that drive conversions and user satisfaction.",
-  },
-  {
     id: 3,
     url: "/services/services(2).png",
     title: "App Development",
     description:
       "Develop native and cross-platform mobile applications that deliver seamless performance across devices.",
+  },
+  {
+    id: 2,
+    url: "/services/services(1).jpg",
+    title: "UI/UX Design",
+    description:
+      "Create intuitive interfaces and engaging user experiences that drive conversions and user satisfaction.",
   },
   {
     id: 4,
